@@ -1,7 +1,7 @@
 
 [project]
 name = "certbot-dns-ispconfig"
-version = "0.3.0"
+version = "0.3.2"
 description = "ispconfig DNS Authenticator plugin for Certbot"
 authors = [
     { name = "Matthias Bilger", email = "matthias@bilger.info" }
@@ -11,9 +11,8 @@ readme = "README.rst"
 homepage = "https://github.com/m42e/certbot-dns-ispconfig"
 keywords = ["certbot", "dns", "ispconfig", "authenticator", "plugin"]
 dependencies = [
-    "python>=3.8",
     "acme>=2.11.0",
-    "certbot>=2.11.0",
+    "certbot>=4.0.0",
     "setuptools",
     "requests",
     "mock",
@@ -22,7 +21,7 @@ dependencies = [
 
 [tool.poetry]
 name = "certbot-dns-ispconfig"
-version = "0.3.0"
+version = "0.3.2"
 description = "ispconfig DNS Authenticator plugin for Certbot"
 authors = ["Matthias Bilger ‹matthias@bilger.info>"]
 license = "Apache License 2.0"
@@ -30,10 +29,15 @@ readme = "README, rst"
 homepage = "https://github.com/m42e/certbot-dns-ispconfig"
 keywords = ["certbot", "dns", "ispconfig", "authenticator", "plugin"]
 
+
+[tool.poetry.plugins."certbot.plugins"]
+"dns-ispconfig" = "certbot_dns_ispconfig.dns_ispconfig:Authenticator"
+
+
 [tool.poetry.dependencies]
 python = ">=3.8"
 acme = ">=2.11.0"
-certbot = ">=2.11.0"
+certbot = ">=4.0.0"
 setuptools = "*"
 requests = "*"
 mock = "*"

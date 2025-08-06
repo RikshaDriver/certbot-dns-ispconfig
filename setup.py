@@ -2,11 +2,11 @@ from os import path
 from setuptools import setup
 from setuptools import find_packages
 
-version = "0.3.0"
+version = "0.3.2"
 
 install_requires = [
     "acme>=0.29.0",
-    "certbot>=0.34.0",
+    "certbot>=4.0.0",
     "setuptools",
     "requests",
     "mock",
